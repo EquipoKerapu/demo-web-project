@@ -37,7 +37,7 @@ public class WebController {
 	@Autowired
 	private UserManager userManager;
 	/**
-	 * This is our Assignment 3 request mapping api
+	 * This is Elinor Huntington's Assignment 3 request mapping api
 	 * It returns a string for now, and hopefully something
 	 * more exciting for assignment 4
 	 */

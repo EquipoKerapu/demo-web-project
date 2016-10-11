@@ -36,6 +36,15 @@ public class WebController {
 	 */
 	@Autowired
 	private UserManager userManager;
+	/**
+	 * This is our Assignment 3 request mapping api
+	 * It returns a string for now, and hopefully something
+	 * more exciting for assignment 4
+	 */
+	@RequestMapping(value = "/cs480/equipo", method = RequestMethod.GET)
+	String equipo() {
+		return "Hello from equipo!";
+	}
 
 	/**
 	 * This is a simple example of how the HTTP API works.

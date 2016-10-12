@@ -1,5 +1,8 @@
 package edu.csupomona.cs480.controller;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +48,50 @@ public class WebController {
 	String equipo() {
 		return "Hello from equipo!";
 	}
-
+	
+	/**
+	 * Assignment 3 part 3
+	 * Method by Fanny Avila
+	 * returns a string to be displayed
+	 * string changes every couple of hours depending on what the time is. 
+	 * Method determines current coffee level depending on what hour of the day it is 
+	 * These numbers are taken from personal experience.
+	 * */
+	@RequestMapping(value = "/cs480/coffee_status", method = RequestMethod.GET)
+	String CoffeeStatus() {
+		float percentCoffee=0;
+		Date date = new Date();   // given date
+		Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
+		calendar.setTime(date);   // assigns calendar to given date 
+		float hour = calendar.get(Calendar.HOUR_OF_DAY);
+		String message="";
+		percentCoffee= (100-((hour/24)*100));
+		if(percentCoffee >= 90){
+			message=message+"no action required...The jitters should start soon.";
+		}
+		else if(percentCoffee <90 && percentCoffee >=70){
+			message=message+"Everything is right with the world.";
+		}
+		else if(percentCoffee <70 && percentCoffee>=50)
+		{
+			message=message+"should probably get started on that project...";
+		}
+		else if(percentCoffee<50 && percentCoffee>=30){
+			message = message+"...I should get to work on that project....I'll just lay down for a bit";
+		}
+		else if(percentCoffee < 30 && percentCoffee >= 12)
+		{
+			message = message+"...I need a nap...";
+		}
+		else if(percentCoffee<12 && percentCoffee>=5){
+			message = message+"WARNING!: BATTERY DANGEROUSLY LOW! please grab another cup.";
+		}
+		else{
+			message = message+"SHUTING DOWN...Zzzzzzzzzzzzzzz...";
+		}
+			
+		return "Current coffee levels: "+ String.format(java.util.Locale.US,"%.2f", percentCoffee)+"%" +" "+message;
+	}
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.

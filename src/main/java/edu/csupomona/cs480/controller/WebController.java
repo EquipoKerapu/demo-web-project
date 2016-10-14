@@ -17,6 +17,8 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import junit.framework.*;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -92,6 +94,23 @@ public class WebController {
 			
 		return "Current coffee levels: "+ String.format(java.util.Locale.US,"%.2f", percentCoffee)+"%" +" "+message;
 	}
+	
+	/**
+	 * Cristian Garcia
+	 * Assignment 4 Pt. 2
+	 * Implementing junit into project
+	 */
+	@RequestMapping(value = "/cs480/junit-demo", method = RequestMethod.GET)
+	String junitDemo() {
+		
+		int value1 = 2;
+		int value2 = 3;
+		
+		double result = value1 + value2;
+		assertTrue(result == 6);
+		
+	}
+	
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.

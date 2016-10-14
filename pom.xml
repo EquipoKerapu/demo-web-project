@@ -62,6 +62,7 @@
 		</dependency>
 		
 		<!-- junit dependency by Cristian G-->
+		
 		<dependency>
 		  	<groupId>junit</groupId>
 		  	<artifactId>junit</artifactId>

@@ -61,7 +61,7 @@
 		    <version>1.9.2</version>
 		</dependency>
 		
-		<!-- junit dependency by Cristian G -->
+		<!-- junit dependency by Cristian G-->
 		<dependency>
 		  	<groupId>junit</groupId>
 		  	<artifactId>junit</artifactId>

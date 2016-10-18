@@ -50,7 +50,14 @@ public class WebController {
 	String equipo() {
 		return "Hello from equipo!";
 	}
-	
+	/**
+	 * This is Bhavana
+	 * Asssignment 3 part 3
+	 */
+	@RequestMapping(value = "/cs480/A3", method = RequestMethod.GET)
+	String A3() {
+		return "Hey Bhavana!";
+	}
 	/**
 	 * Assignment 3 part 3
 	 * Method by Fanny Avila
